@@ -244,6 +244,11 @@
             height: auto;
             /* 縦横比を保つ */
         }
+
+        .longtext {
+          margin-left: clamp(1vw, 5vw, 10vw);
+          line-break: auto;
+        }
     </style>
 
 </style>
@@ -257,9 +262,11 @@
     <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
     <ul class="menu">
       <li class="top"><a href="#home">ホーム</a></li>
+      <li><a href="#information">重要なお知らせ</a></li>
       <li><a href="#about">研究会について</a></li>
-      <li><a href="#events">イベント</a></li>
+      <li><a href="#events">イベント情報</a></li>
       <li><a href="#contact">質問など</a></li>
+      <li><a href="#other">その他（入部希望者へのお願い）</a></li>
       <li><a>★外部リンク集★</a></li>
       <!---target="_blank"で新しいタブで開く。rel="noopener noreferrerは、target="_blank"を使うときのおまじない--->
       <li><a href="https://www.ct.omu.ac.jp/" target="_blank" rel="noopener noreferrer">公大高専（外部サイト）</a></li>
@@ -285,19 +292,26 @@
     </div>
 
     <h2>★ようこそ！★</h2>
-    <p>このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
+    <p class="longtext">このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
+</section>
+
+<section id="information">
+  <h1>重要なお知らせ</h1>
+  <p class="longtext">何かあれば、ここを更新いたします。</p><br>
+  <p class="longtext">今後のイベント情報です。準備中です。</p>
+  <!---<p>見学・体験等は随時行っております。</p>--->
 </section>
 
 <section id="about">
     <h1>研究会について</h1>
     <h3>活動日</h3>
-    <p>毎週火・木曜日</p>
+    <p class="longtext">毎週火・金曜日：16:30～18:00(試験2週間前から研究会としての活動はなし)</p>
     <h3>活動内容</h3>
-    <p>おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
+    <p class="longtext">おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
     <h3>顧問</h3>
-    <p>〇〇先生、〇〇先生、〇〇先生</p>
+    <p class="longtext">〇〇先生、〇〇先生、〇〇先生</p>
     <h3>場所</h3>
-    <p>大阪公大高専：教養棟3階・物理講義室</p>
+    <p class="longtext">大阪公大高専：教養棟3階・物理講義室</p>
 
     <div class="box">
         <h3>教養棟3階</h3>
@@ -306,7 +320,7 @@
     </div>
 
     <h3>部費</h3>
-    <p>0円（入部金も0円）</p>
+    <p class="longtext">0円（入部金も0円）</p>
     <h3>おすすめの人</h3>
     <ul>
         <li>物理・数学を丁寧に学びたい人</li>
@@ -316,21 +330,40 @@
     <p class="bigtext">入部をお待ちしております。<br>新入生・在校生共に大歓迎です。</p>
 </section>
 
-<section id="events">
-    <h1>イベント</h1>
-    <p>今後のイベント情報です。準備中です。</p>
-    <p>見学・体験等は随時行っております。</p>
+<section id="event">
+  <h1>イベント情報</h1>
+  <p>今後のイベント情報です。準備中です。</p>
+  <!---<p>見学・体験等は随時行っております。</p>--->
 </section>
 
 <section id="contact">
     <h1>質問など</h1>
-    <p>2-E：菊川　颯太（きくかわ　そうた）</p>
-    <p>rb23046r[a]st.omu.ac.jp</p>
-    <p>[a]を@に変えてください。また、メールの件名に「物理・数学研究会」の語を入れてください。</p>
-    <br>
-    サイト作成者：菊川　颯太（とChatGPT）<br>
-    サイト作成補助者：2-E 谷口　陽音さん
+    <p class="longtext">不明点や入部の希望など、お気軽にご連絡ください。</p>
+    <p class="longtext">2-E：菊川　颯太（きくかわ　そうた）</p>
+    <p class="longtext">rb23046r[a]st.omu.ac.jp</p>
+    <p class="longtext">[a]を@に変えてください。また、メールの件名に「物理・数学研究会」の語を入れてください。</p>
 </section>
+
+<section id="other">
+  <h1>入部希望者へのお願い</h1>
+  <p class="longtext">物理・数学研究会は、申請準備中の団体です。</p>
+  <p class="longtext">「異なる学年で5人以上集まること」が、部活と認定される条件なので
+    菊川に入部希望を伝えるメールを送ったのち、菊川から、条件達成のメール
+    が送信されるまでしばらくお待ち下さい。なお、条件達成のメールは条件を
+    満たし次第すぐに送信し、ホームページも更新いたします。その後、活動開始
+    のメールも送信いたします。活動開始の際にもホームページを更新いたします。
+  </p>
+
+  <h1>サイト改良者募集中</h1>
+  <p class="longtext">今は、菊川がサイトを制作しているのですが、センスがないことを痛感しております。</p>
+  <p class="longtext">そこで、サイト製作を委任できる人を募集しております。条件は、いま、ここに表示
+  されている情報が見られたらいいので、ほぼないに等しいといえます。（デザインは
+  自由！！）入部希望者でなくともよいので、ご協力のほどよろしくお願いします。</p>
+  <p class="longtext">したい方は、菊川までご連絡ください。</p>
+  <p class="longtext">注）活動をせずに、サイトを制作するだけでも入部できます！</p>
+  <p class="longtext">サイト作成者：菊川　颯太（とChatGPT）</p>
+</section>
+
 
 <script>
     // メニューの開閉を処理する関数
