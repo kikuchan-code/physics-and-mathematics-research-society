@@ -74,9 +74,10 @@
             transition: top 0.5s ease;
             overflow-y: auto;
             /* 縦方向のスクロールを可能にする */
-            
+
         }
 
+        /* ナビゲーションメニューアイテムの表示場所の設定 */
         nav ul.active {
             top: 60px;
             /* ヘッダーの下に表示される設定 */
@@ -86,7 +87,8 @@
         nav ul li {
             margin: 10px 0;
         }
-
+        
+        /* ナビゲーションメニューアイテムの文字設定 */
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -96,7 +98,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
+        
+        /* ナビゲーションメニューアイテムのホバー設定 */
         nav ul li a:hover {
             background-color: #004876;
         }
@@ -125,7 +128,7 @@
             text-align: center;
         }
 
-        .information{
+        .information {
             font-family: "Noto Sans JP", sans-serif;
             font-size: clamp(10px, 3vw, 24px);
             /* フォントサイズ設定 */
@@ -137,12 +140,36 @@
             /* フォントサイズ設定 */
         }
 
-        /* 画像のスタイル設定 */
+        /*囲み枠*/
+        .box {
+            border: 2px solid #00a0e9;
+        }
+
+        .box h3 {
+            background: #00a0e9;
+            color: #FFF;
+            text-align: center;
+            margin: 0;
+        }
+
+        /*囲み枠の文字*/
+        .box .inner {
+            padding: .5em;
+        }
+
+        /* 画像の位置の設定 */
         .image {
-            width: clamp(100px, 50%, 600px);
-            /* 幅の設定 */
+            text-align: center;
+            /* テキストを中央に配置 */
+            
+        }
+
+         /* 画像の設定 */
+        .image img {
+            width: clamp(200px, 80%, 600px);
+            /* ビューポートの幅の80% */
             height: auto;
-            /* アスペクト比を維持 */
+            /* 縦横比を保つ */
         }
     </style>
 </head>
@@ -172,14 +199,14 @@
     </header>
 
     <section id="home">
-        
+
         <p class="midashi">
             「なぜ？」のその先へ<br>
             　共に、極めよう。　
         </p>
-        
+
         <div class="image"></div>
-        
+
         <h2>★ようこそ！★</h2>
         <p>このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
     </section>
@@ -194,6 +221,13 @@
         <p>〇〇先生、〇〇先生、〇〇先生</p>
         <h3>場所</h3>
         <p>大阪公大高専：教養棟3階・物理講義室</p>
+
+        <div class="box">
+            <h3>教養棟3階</h3>
+            <br>
+            <div class="image"><img src="map.svg"></div>
+        </div>
+
         <h3>部費</h3>
         <p>0円（入部金も0円）</p>
         <h3>おすすめの人</h3>
