@@ -87,7 +87,7 @@
         nav ul li {
             margin: 10px 0;
         }
-        
+
         /* ナビゲーションメニューアイテムの文字設定 */
         nav ul li a {
             color: white;
@@ -98,7 +98,7 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-        
+
         /* ナビゲーションメニューアイテムのホバー設定 */
         nav ul li a:hover {
             background-color: #004876;
@@ -161,10 +161,10 @@
         .image {
             text-align: center;
             /* テキストを中央に配置 */
-            
+
         }
 
-         /* 画像の設定 */
+        /* 画像の設定 */
         .image img {
             width: clamp(200px, 80%, 600px);
             /* ビューポートの幅の80% */
@@ -205,7 +205,13 @@
             　共に、極めよう。　
         </p>
 
-        <div class="image"></div>
+        <div class="image">
+            <picture>
+                <source srcset="Newton's-cradle.webp" type="image/webp"/>
+                <source srcset="Newton's-cradle.png" type="image/png"/>
+                <img src="Newton's-yurikago.png" alt="Newton's-cradle"/>
+               </picture>
+        </div>
 
         <h2>★ようこそ！★</h2>
         <p>このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
