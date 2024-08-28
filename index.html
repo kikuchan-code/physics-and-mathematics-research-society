@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>物理・数学研究会</title>
+    <style>
+        /* 基本のスタイル設定 */
+        body {
+            margin: 0;
+            font-family: "Noto Sans JP", sans-serif;
+        }
+
+        /* ヘッダーのスタイル設定 */
+        header {
+            background-color: #00a0e9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        /* ロゴのスタイル設定 */
+        .logo {
+            font-size: clamp(18px, 4vw, 25px);
+            font-weight: bold;
+            text-align: center;
+            width: clamp(100px, 50%, 600px);
+            /* 幅の設定 */
+            height: auto;
+            /* アスペクト比を維持 */
+        }
+
+        /* ハンバーガーメニューのスタイル設定 */
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        /* メニューアイコンのスタイル設定 */
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* ナビゲーションメニューのスタイル設定 */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 25vh;
+            /* メニューの高さ設定 */
+            background-color: #00a0e9;
+            text-align: center;
+            transition: top 0.5s ease;
+            overflow-y: auto;
+            /* 縦方向のスクロールを可能にする */
+            
+        }
+
+        nav ul.active {
+            top: 60px;
+            /* ヘッダーの下に表示される設定 */
+        }
+
+        /* ナビゲーションメニューアイテムのスタイル設定 */
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #004876;
+        }
+
+        /* セクションの基本スタイル設定 */
+        section {
+            padding: 80px 20px;
+            min-height: 25vh;
+            /* 最低限の高さ設定 */
+            box-sizing: border-box;
+            border-bottom: 10px groove #00a0e9;
+            /* セクションの下にボーダーを追加 */
+        }
+
+        /* 最後のセクションのボーダーを削除 */
+        section:last-of-type {
+            border-bottom: none;
+            /* 最後のセクションのボーダーを削除 */
+        }
+
+        /* セクションタイトルのスタイル設定 */
+        .midashi {
+            font-family: 'Noto Serif', serif;
+            font-size: clamp(25px, 7vw, 40px);
+            /* フォントサイズ設定 */
+            text-align: center;
+        }
+
+        .information{
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: clamp(10px, 3vw, 24px);
+            /* フォントサイズ設定 */
+        }
+
+        /* 大きなテキストのスタイル設定 */
+        .bigtext {
+            font-size: clamp(18px, 5vw, 30px);
+            /* フォントサイズ設定 */
+        }
+
+        /* 画像のスタイル設定 */
+        .image {
+            width: clamp(100px, 50%, 600px);
+            /* 幅の設定 */
+            height: auto;
+            /* アスペクト比を維持 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="logo">物理・数学研究会</div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">研究会について</a></li>
+                <li><a href="#events">イベント</a></li>
+                <li><a href="#contact">質問など</a></li>
+                <li><a href="https://www.ct.omu.ac.jp/">公大高専（外部サイト）</a></li>
+                <li><a href="https://www.google.com">Google（外部サイト）</a></li>
+                <li>―――</li>
+                <li>準備中です。順次、リンクやコンテンツを追加予定です。</li>
+                <li>―――</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        
+        <p class="midashi">
+            「なぜ？」のその先へ<br>
+            　共に、極めよう。　
+        </p>
+        
+        <div class="image"></div>
+        
+        <h2>★ようこそ！★</h2>
+        <p>このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
+    </section>
+
+    <section id="about">
+        <h1>研究会について</h1>
+        <h3>活動日</h3>
+        <p>毎週火・木曜日</p>
+        <h3>活動内容</h3>
+        <p>おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
+        <h3>顧問</h3>
+        <p>〇〇先生、〇〇先生、〇〇先生</p>
+        <h3>場所</h3>
+        <p>大阪公大高専：教養棟3階・物理講義室</p>
+        <h3>部費</h3>
+        <p>0円（入部金も0円）</p>
+        <h3>おすすめの人</h3>
+        <ul>
+            <li>物理・数学を丁寧に学びたい人</li>
+            <li>好奇心が溢れている人</li>
+            <li>「なぜ？」という疑問を大切にする人</li>
+        </ul>
+        <p class="bigtext">入部をお待ちしております。<br>新入生・在校生共に大歓迎です。</p>
+    </section>
+
+    <section id="events">
+        <h1>イベント</h1>
+        <p>今後のイベント情報です。準備中です。</p>
+        <p>見学・体験等は随時行っております。</p>
+    </section>
+
+    <section id="contact">
+        <h1>質問など</h1>
+        <p>2-E：菊川　颯太（きくかわ　そうた）</p>
+        <p>rb23046r[a]st.omu.ac.jp</p>
+        <p>[a]を@に変えてください。また、メールの件名に「物理・数学研究会」の語を入れてください。</p>
+        <br>
+        サイト作成者：菊川　颯太（とChatGPT）<br>
+        サイト作成補助者：2-E 谷口　陽音さん
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                var href = this.getAttribute('href');
+
+                // 外部リンクには event.preventDefault を適用しない
+                if (href.startsWith("#")) {
+                    event.preventDefault();
+                    var menu = document.getElementById('menu');
+                    var targetElement = document.querySelector(href);
+                    menu.classList.remove('active');
+                    setTimeout(() => {
+                        window.scrollTo({ top: targetElement.offsetTop, behavior: 'smooth' });
+                    }, 50);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
