@@ -11,9 +11,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+  rel="stylesheet">
 
 <style>
+  /*リセットCSS*/
+
+  /*
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  */
 
   body {
     margin: 0;
@@ -21,235 +29,234 @@
     background-color: #ffffff;
   }
 
+  /*テキスト部*/
+  .text {
+    margin-left: clamp(5px, 8Vh, 30px);
+    margin-right: clamp(5px, 8Vh, 30px);
+  }
 
-/*ここからハンバーガーメニューの設定*/
+  /*ここからハンバーガーメニューの設定*/
 
- /* メニューとヘッダの色 */
-:root {
-  --background-navbar: #00a0e9;
-}
+  /* メニューとヘッダの色 */
+  :root {
+    --background-navbar: #00a0e9;
+  }
 
-/*ヘッダ設定*/
-.header {
-  background: var(--background-navbar);
-  position: fixed;
-  width: 100%;
-  height: 52px;
-}
+  /*ヘッダの大きさ設定*/
+  .header {
+    background: var(--background-navbar);
+    position: fixed;
+    width: 100%;
+    height: 52px;
+  }
 
-/* メニュー全般設定 */
-.menu {
-  list-style: none;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 0;
-  margin-top: 52px;
-  padding: 0 0 10px 0;
-  clear: both;
-  background: var(--background-navbar);
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  transform: scale(1, 0);
-  transform-origin: top;
+  /* メニュー全般設定 */
+  .menu {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-top: 52px;
+    padding: 0 0 10px 0;
+    clear: both;
+    background: var(--background-navbar);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    transform: scale(1, 0);
+    transform-origin: top;
+    overflow-y: auto;
+    /* 縦方向のスクロールを可能にする */
+    height: 30vh;
+    /* メニューの高さ設定 */
+  }
 
-  overflow-y: auto;
-  /* 縦方向のスクロールを可能にする */
+  /* ハンバーガーメニューボタン */
+  .menu-btn:checked~.menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-  height: 25vh;
-  /* メニューの高さ設定 */
-}
+  /* ハンバーガーメニューテキスト */
+  .menu a {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: 0.5s;
+  }
 
-/* ハンバーガーメニューボタン */
-.menu-btn:checked ~ .menu {
-  transform: scale(1, 1);
-  transform-origin: top;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+  .menu li {
+    border-top: 1px solid #FFFFFF;
+    padding: 15px 0;
+    margin: 0 54px;
+    opacity: 0;
+    transition: 0.5s;
+  }
 
-/* ハンバーガーメニューテキスト */
-.menu a {
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #FFFFFF;
-  opacity: 0;
-  transition: 0.5s;
-}
+  .menu-btn:checked~.menu a,
+  .menu-btn:checked~.menu li {
+    opacity: 1;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+  }
 
-.menu li {
-  border-top: 1px solid #FFFFFF;
-  padding: 15px 0;
-  margin: 0 54px;
-  opacity: 0;
-  transition: 0.5s;
-}
+  .menu-btn {
+    display: none;
+  }
 
-.menu-btn:checked ~ .menu a,
-.menu-btn:checked ~ .menu li {
-  opacity: 1;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
-}
+  .menu-icon {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 24px 14px;
+    -webkit-tap-highlight-color: #ffffff;
+  }
 
-.menu-btn {
-  display: none;
-}
+  .navicon {
+    background: #ffffff;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-.menu-icon {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding: 24px 14px;
-  -webkit-tap-highlight-color: #ffffff;
-}
+  .navicon:before,
+  .navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #FFFFFF;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-.navicon {
-  background: #ffffff;
-  display: block;
-  height: 3px;
-  width: 26px;
-  position: relative;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+  .navicon:before {
+    top: 9px;
+  }
 
-.navicon:before,
-.navicon:after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: #FFFFFF;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+  .navicon:after {
+    bottom: 9px;
+  }
 
-.navicon:before {
-  top: 9px;
-}
+  /* Hamburger Menu Animation Start */
+  .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
 
-.navicon:after {
-  bottom: 9px;
-}
+  .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
 
-/* Hamburger Menu Animation Start */
-.menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
+  .menu-btn:checked~.menu-icon:not(.steps) .navicon:before {
+    top: 0;
+  }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
+  .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    bottom: 0;
+  }
 
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
-  top: 0;
-}
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  bottom: 0;
-}
+  .menu-btn:checked~.menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-.menu-btn:checked ~ .menu-icon .navicon {
-  background: rgba(0, 0, 0, 0);
-  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
-/* Hamburger Menu Animation End */
+  /* Hamburger Menu Animation End */
 
-/* ヘッダ(Navtext)全体の設定 */
-.navtext-container {
-  width: 100%;
-  height: 52px;
-  position: absolute;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  /* ヘッダ(Navtext)全体の設定 */
+  .navtext-container {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-/* ヘッダのテキスト */
-.navtext {
-  position: absolute;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  letter-spacing: 4px;
-  font-size: 20px;
-}
-/*ここまでハンバーガーメニューの設定*/
+  /* ヘッダのテキスト */
+  .navtext {
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 4px;
+    font-size: 20px;
+  }
 
-        /* セクションの基本スタイル設定 */
-        section {
-            padding: 80px 20px;
-            min-height: 25vh;
-            /* 最低限の高さ設定 */
-            box-sizing: border-box;
-            border-bottom: 10px groove #00a0e9;
-            /* セクションの下にボーダーを追加 */
-        }
+  /*ここまでハンバーガーメニューの設定*/
 
-        /* 最後のセクションのボーダーを削除 */
-        section:last-of-type {
-            border-bottom: none;
-            /* 最後のセクションのボーダーを削除 */
-        }
+  /* セクションの基本スタイル設定 */
+  section {
+    padding: 80px 20px;
+    min-height: 25vh;
+    /* 最低限の高さ設定 */
+    box-sizing: border-box;
+    border-bottom: 10px groove #00a0e9;
+    /* セクションの下にボーダーを追加 */
+  }
 
-        /* セクションタイトルのスタイル設定 */
-        .midashi {
-            font-family: 'Noto Serif', serif;
-            font-size: clamp(25px, 7vw, 40px);
-            /* フォントサイズ設定 */
-            text-align: center;
-        }
+  /* 最後のセクションのボーダーを削除 */
+  section:last-of-type {
+    border-bottom: none;
+    /* 最後のセクションのボーダーを削除 */
+  }
 
-        .information {
-            font-family: "Noto Sans JP", sans-serif;
-            font-size: clamp(10px, 3vw, 24px);
-            /* フォントサイズ設定 */
-        }
+  /* セクションタイトルのスタイル設定 */
+  .midashi {
+    font-family: 'Noto Serif', serif;
+    font-size: clamp(25px, 7vw, 40px);
+    /* フォントサイズ設定 */
+    text-align: center;
+  }
 
-        /* 大きなテキストのスタイル設定 */
-        .bigtext {
-            font-size: clamp(18px, 5vw, 30px);
-            /* フォントサイズ設定 */
-        }
+  /* 大きなテキストのスタイル設定 */
+  .bigtext {
+    font-size: clamp(18px, 5vw, 30px);
+    /* フォントサイズ設定 */
+  }
 
-        /*囲み枠*/
-        .box {
-            border: 2px solid #00a0e9;
-        }
+  /*囲み枠*/
+  .box {
+    border: 2px solid #00a0e9;
+  }
 
-        /*囲み枠のタイトル*/
-        .box h3 {
-            background: #00a0e9;
-            color: #FFF;
-            text-align: center;
-            margin: 0;
-        }
+  /*囲み枠のタイトル*/
+  .box h3 {
+    background: #00a0e9;
+    color: #FFF;
+    text-align: center;
+    margin: 0;
+  }
 
-        /*囲み枠の文字*/
-        .box .inner {
-            padding: .5em;
-        }
+  /*囲み枠の文字*/
+  .box .inner {
+    padding: .5em;
+  }
 
-        /* 画像の位置の設定 */
-        .image {
-            text-align: center;
-            /* テキストを中央に配置 */
+  /* 画像の位置の設定 */
+  .image {
+    text-align: center;
+    /* テキストを中央に配置 */
 
-        }
+  }
 
-        /* 画像の設定 */
-        .image img {
-            width: clamp(200px, 80%, 600px);
-            /* ビューポートの幅の80% */
-            height: auto;
-            /* 縦横比を保つ */
-        }
+  /* 画像の設定 */
+  .image img {
+    width: clamp(200px, 80%, 600px);
+    /* ビューポートの幅の80% */
+    height: auto;
+    /* 縦横比を保つ */
+  }
 
-        .longtext {
-          margin-left: clamp(1vw, 5vw, 10vw);
-          line-break: auto;
-        }
-    </style>
+  .longtext {
+    line-break: auto;
+  }
+</style>
 
 </style>
 
@@ -276,105 +283,105 @@
 
   </header>
 
-  <section id="home">
+  <div class="text">
+    <section id="home">
 
-    <p class="midashi">
+      <p class="midashi">
         「なぜ？」のその先へ<br>
         　共に、極めよう。　
-    </p>
+      </p>
 
-    <div class="image">
+      <div class="image">
         <picture>
-            <source srcset="Newton's-cradle.webp" type="image/webp"/>
-            <source srcset="Newton's-cradle.png" type="image/png"/>
-            <img src="Newton's-cradle.png" alt="Newton's-cradle"/>
-           </picture>
-    </div>
+          <source srcset="Newton's-cradle.webp" type="image/webp" />
+          <source srcset="Newton's-cradle.png" type="image/png" />
+          <img src="Newton's-cradle.png" alt="Newton's-cradle" />
+        </picture>
+      </div>
 
-    <h2>★ようこそ！★</h2>
-    <p class="longtext">このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
-</section>
+      <h2>★ようこそ！★</h2>
+      <p class="longtext">このページは「物理・数学研究会」のホームページです。ここに研究会の活動内容やお知らせなどを掲載します。</p>
+    </section>
 
-<section id="information">
-  <h1>重要なお知らせ</h1>
-  <p class="longtext">何かあれば、ここを更新いたします。</p><br>
-  <p class="longtext">今後のイベント情報です。準備中です。</p>
-  <!---<p>見学・体験等は随時行っております。</p>--->
-</section>
+    <section id="information">
+      <h1>重要なお知らせ</h1>
+      <p class="longtext">何かあれば、ここを更新いたします。</p><br>
+      <p class="longtext">今後のイベント情報です。準備中です。</p>
+      <!---<p>見学・体験等は随時行っております。</p>--->
+    </section>
 
-<section id="about">
-    <h1>研究会について</h1>
-    <h3>活動日</h3>
-    <p class="longtext">毎週火・金曜日：16:30～18:00(試験2週間前から研究会としての活動はなし)</p>
-    <h3>活動内容</h3>
-    <p class="longtext">おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
-    <h3>顧問</h3>
-    <p class="longtext">〇〇先生、〇〇先生、〇〇先生</p>
-    <h3>場所</h3>
-    <p class="longtext">大阪公大高専：教養棟3階・物理講義室</p>
+    <section id="about">
+      <h1>研究会について</h1>
+      <h3>活動日</h3>
+      <p class="longtext">毎週火・金曜日：16:30～18:00(試験2週間前から研究会としての活動はなし)</p>
+      <h3>活動内容</h3>
+      <p class="longtext">おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
+      <h3>顧問</h3>
+      <p class="longtext">〇〇先生、〇〇先生、〇〇先生</p>
+      <h3>場所</h3>
+      <p class="longtext">大阪公大高専：教養棟3階・物理講義室</p>
 
-    <div class="box">
+      <div class="box">
         <h3>教養棟3階</h3>
         <br>
         <div class="image"><img src="map.svg"></div>
-    </div>
+      </div>
 
-    <h3>部費</h3>
-    <p class="longtext">0円（入部金も0円）</p>
-    <h3>おすすめの人</h3>
-    <ul>
+      <h3>部費</h3>
+      <p class="longtext">0円（入部金も0円）</p>
+      <h3>おすすめの人</h3>
+      <ul>
         <li>物理・数学を丁寧に学びたい人</li>
         <li>好奇心が溢れている人</li>
         <li>「なぜ？」という疑問を大切にする人</li>
-    </ul>
-    <p class="bigtext">入部をお待ちしております。<br>新入生・在校生共に大歓迎です。</p>
-</section>
+      </ul>
+      <p class="bigtext">入部をお待ちしております。<br>新入生・在校生共に大歓迎です。</p>
+    </section>
 
-<section id="event">
-  <h1>イベント情報</h1>
-  <p>今後のイベント情報です。準備中です。</p>
-  <!---<p>見学・体験等は随時行っております。</p>--->
-</section>
+    <section id="event">
+      <h1>イベント情報</h1>
+      <p>今後のイベント情報です。準備中です。</p>
+      <!---<p>見学・体験等は随時行っております。</p>--->
+    </section>
 
-<section id="contact">
-    <h1>質問など</h1>
-    <p class="longtext">不明点や入部の希望など、お気軽にご連絡ください。</p>
-    <p class="longtext">2-E：菊川　颯太（きくかわ　そうた）</p>
-    <p class="longtext">rb23046r[a]st.omu.ac.jp</p>
-    <p class="longtext">[a]を@に変えてください。また、メールの件名に「物理・数学研究会」の語を入れてください。</p>
-</section>
+    <section id="contact">
+      <h1>質問など</h1>
+      <p class="longtext">不明点や入部の希望など、お気軽にご連絡ください。</p>
+      <p class="longtext">2-E：菊川　颯太（きくかわ　そうた）</p>
+      <p class="longtext">rb23046r[a]st.omu.ac.jp</p>
+      <p class="longtext">[a]を@に変えてください。また、メールの件名に「物理・数学研究会」の語を入れてください。</p>
+    </section>
 
-<section id="other">
-  <h1>入部希望者へのお願い</h1>
-  <p class="longtext">物理・数学研究会は、申請準備中の団体です。</p>
-  <p class="longtext">「異なる学年で5人以上集まること」が、部活と認定される条件なので
-    菊川に入部希望を伝えるメールを送ったのち、菊川から、条件達成のメール
-    が送信されるまでしばらくお待ち下さい。なお、条件達成のメールは条件を
-    満たし次第すぐに送信し、ホームページも更新いたします。その後、活動開始
-    のメールも送信いたします。活動開始の際にもホームページを更新いたします。
-  </p>
+    <section id="other">
+      <h1>入部希望者へのお願い</h1>
+      <p class="longtext">物理・数学研究会は、申請準備中の団体です。</p>
+      <p class="longtext">「異なる学年で5人以上集まること」が、部活と認定される条件なので菊川に入部希望を伝えるメールを送ったのち、
+        菊川から、条件達成のメールが送信されるまでしばらくお待ち下さい。なお、条件達成のメールは条件を満たし次第すぐに送信し、
+        ホームページも更新いたします。その後、活動開始のメールも送信いたします。活動開始の際にもホームページを更新いたします。
+      </p><br>
 
-  <h1>サイト改良者募集中</h1>
-  <p class="longtext">今は、菊川がサイトを制作しているのですが、センスがないことを痛感しております。</p>
-  <p class="longtext">そこで、サイト製作を委任できる人を募集しております。条件は、いま、ここに表示
-  されている情報が見られたらいいので、ほぼないに等しいといえます。（デザインは
-  自由！！）入部希望者でなくともよいので、ご協力のほどよろしくお願いします。</p>
-  <p class="longtext">したい方は、菊川までご連絡ください。</p>
-  <p class="longtext">注）活動をせずに、サイトを制作するだけでも入部できます！</p>
-  <p class="longtext">サイト作成者：菊川　颯太（とChatGPT）</p>
-</section>
+      <h1>サイト改良者募集中</h1>
+      <p class="longtext">今は、菊川がサイトを制作しているのですが、センスがないことを痛感しております。
+        そこで、サイト製作を委任できる人を募集しております。条件は、いま、ここに表示
+        されている情報が見られたらいいので、ほぼないに等しいといえます。（デザインは
+        自由！！）入部希望者でなくともよいので、ご協力のほどよろしくお願いします。</p>
+      <p class="longtext">したい方は、菊川までご連絡ください。</p>
+      <p class="longtext">注）活動をせずに、サイトを制作するだけでも入部できます！</p><br>
+      <p class="longtext">サイト作成者：菊川　颯太（とChatGPT）</p>
+    </section>
+  </div>
 
 
-<script>
+  <script>
     // メニューの開閉を処理する関数
     function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        var menuBtn = document.querySelector('.menu-btn');
-        if (menuBtn.checked) {
-            menu.style.transform = 'scale(1, 1)';
-        } else {
-            menu.style.transform = 'scale(1, 0)';
-        }
+      var menu = document.querySelector('.menu');
+      var menuBtn = document.querySelector('.menu-btn');
+      if (menuBtn.checked) {
+        menu.style.transform = 'scale(1, 1)';
+      } else {
+        menu.style.transform = 'scale(1, 0)';
+      }
     }
 
     // チェックボックスの変化に応じてメニューの表示を切り替える
@@ -382,25 +389,25 @@
 
     // メニュー内のリンクにクリックイベントを追加してスムーズスクロールを実現
     document.querySelectorAll('.menu a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            var href = this.getAttribute('href');
+      link.addEventListener('click', function (event) {
+        var href = this.getAttribute('href');
 
-            // 内部リンクの場合
-            if (href.startsWith("#")) {
-                event.preventDefault();
-                var targetElement = document.querySelector(href);
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 52, // ヘッダの高さを考慮
-                        behavior: 'smooth'
-                    });
-                }, 50);
-                document.querySelector('.menu-btn').checked = false; // メニューを閉じる
-                toggleMenu();
-            }
-        });
+        // 内部リンクの場合
+        if (href.startsWith("#")) {
+          event.preventDefault();
+          var targetElement = document.querySelector(href);
+          setTimeout(() => {
+            window.scrollTo({
+              top: targetElement.offsetTop - 52, // ヘッダの高さを考慮
+              behavior: 'smooth'
+            });
+          }, 50);
+          document.querySelector('.menu-btn').checked = false; // メニューを閉じる
+          toggleMenu();
+        }
+      });
     });
-</script>
+  </script>
 
 
 </body>
