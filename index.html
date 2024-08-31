@@ -255,6 +255,13 @@
     /* 縦横比を保つ */
   }
 
+  .image video {
+    width: clamp(200px, 80%, 400px);
+    /* ビューポートの幅の80% */
+    height: auto;
+    /* 縦横比を保つ */
+  }
+
   .longtext {
     line-break: auto;
   }
@@ -293,11 +300,13 @@
       </p>
 
       <div class="image">
+        <video  src="demo.mp4" poster="demo.jpg" controls preload="none"></video>
         <picture>
-          <source srcset="Newton's-cradle.webp" type="image/webp" />
+          <!--- <source srcset="Newton's-cradle.webp" type="image/webp" />
           <source srcset="Newton's-cradle.png" type="image/png" />
-          <img src="Newton's-cradle.png" alt="Newton's-cradle" />
+          <img src="Newton's-cradle.png" alt="Newton's-cradle" /> --->
         </picture>
+        <p>垂直抗力が小球に仕事をする運動</p>        
       </div>
 
       <h2>★ようこそ！★</h2>
@@ -314,7 +323,7 @@
     <section id="about">
       <h1>研究会について</h1>
       <h3>活動日</h3>
-      <p>毎週火・金曜日：16:30～18:00(試験2週間前から研究会としての活動はなし)</p>
+      <p>毎週火・金曜日：16:30～18:00<br>(試験2週間前から研究会としての活動はなし)</p>
       <h3>活動内容</h3>
       <p class="longtext">おもに、物理や数学の勉強や実験を行い、それらに関する知識をさらに深めます。また、研究なども行って、外部イベントで発表することも計画中です。</p>
       <h3>顧問</h3>
